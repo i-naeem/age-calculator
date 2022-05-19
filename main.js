@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import getDateOfBirth from './utils/getDateOfBirth';
 import getDaysOptions from './utils/getDaysOptions';
 import populateDaysSelectElement from './utils/populateDaysSelectedElement';
 
@@ -66,5 +67,13 @@ const toggleAlert = () => {
 
 form.onsubmit = (event) => {
   event.preventDefault();
-  toggleAlert();
+  const from = new Date(
+    dateOfBirthYear.value,
+    dateOfBirthMonth.value,
+    dateOfBirthDay.value
+  );
+
+  const to = new Date(ageAtYear.value, ageAtMonth.value, ageAtDay.value);
+
+  const dob = getDateOfBirth(from, to);
 };
