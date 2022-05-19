@@ -23,104 +23,120 @@
     </div>
 
     <main>
-      <form id="dob-form">
-        <section class="container mb-3" id="alert" hidden>
-          <div class="alert alert-danger" role="alert">
-            Date of birth can not be greater than age at.
-          </div>
-        </section>
-        <section class="container mb-3">
-          <fieldset class="row">
-            <div class="px-1">
-              <legend>Date of Birth</legend>
+      <section class="container mb-3">
+        <div
+          class="alert alert-success"
+          role="alert"
+          id="age-alert"
+          hidden
+        ></div>
+      </section>
+      <section class="container mb-5">
+        <form id="dob-form">
+          <section class="container mb-3" id="alert" hidden>
+            <div class="alert alert-danger" role="alert">
+              Date of birth can not be greater than age at.
             </div>
+          </section>
+          <section class="container mb-3">
+            <fieldset class="row">
+              <div class="px-1">
+                <legend>Date of Birth</legend>
+              </div>
 
-            <div class="col px-1">
-              <label class="visually-hidden" for="dob-day"> Day </label>
-              <select name="day" id="dob-day" class="form-control"></select>
+              <div class="col px-1">
+                <label class="visually-hidden" for="dob-day"> Day </label>
+                <select name="day" id="dob-day" class="form-control"></select>
+              </div>
+
+              <div class="col px-1">
+                <label class="visually-hidden" for="dob-month"> Month </label>
+                <select name="month" id="dob-month" class="form-control">
+                  <option value="0" selected>January</option>
+                  <option value="1">February</option>
+                  <option value="2">March</option>
+                  <option value="3">April</option>
+                  <option value="4">May</option>
+                  <option value="5">June</option>
+                  <option value="6">July</option>
+                  <option value="7">August</option>
+                  <option value="8">September</option>
+                  <option value="9">October</option>
+                  <option value="10">November</option>
+                  <option value="11">December</option>
+                </select>
+              </div>
+
+              <div class="col px-1">
+                <label class="visually-hidden" for="dob-year">Year</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="dob-year"
+                  placeholder="Select your birth year"
+                  value="2002"
+                />
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="container mb-3">
+            <fieldset class="row">
+              <div class="px-1">
+                <legend>Age at the date of..</legend>
+              </div>
+
+              <div class="col px-1">
+                <label class="visually-hidden" for="age-at-day"> Day </label>
+                <select
+                  name="day"
+                  id="age-at-day"
+                  class="form-control"
+                ></select>
+              </div>
+
+              <div class="col px-1">
+                <label class="visually-hidden" for="age-at-month">
+                  Month
+                </label>
+                <select name="month" id="age-at-month" class="form-control">
+                  <option value="0" selected>January</option>
+                  <option value="1">February</option>
+                  <option value="2">March</option>
+                  <option value="3">April</option>
+                  <option value="4">May</option>
+                  <option value="5">June</option>
+                  <option value="6">July</option>
+                  <option value="7">August</option>
+                  <option value="8">September</option>
+                  <option value="9">October</option>
+                  <option value="10">November</option>
+                  <option value="11">December</option>
+                </select>
+              </div>
+
+              <div class="col px-1">
+                <label class="visually-hidden" for="age-at-year">Year</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="age-at-year"
+                  placeholder="Select your birth year"
+                  value="2002"
+                />
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="container mb-3">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-primary btn-lg">
+                Calculate Date of Birth
+              </button>
             </div>
-
-            <div class="col px-1">
-              <label class="visually-hidden" for="dob-month"> Month </label>
-              <select name="month" id="dob-month" class="form-control">
-                <option value="0" selected>January</option>
-                <option value="1">February</option>
-                <option value="2">March</option>
-                <option value="3">April</option>
-                <option value="4">May</option>
-                <option value="5">June</option>
-                <option value="6">July</option>
-                <option value="7">August</option>
-                <option value="8">September</option>
-                <option value="9">October</option>
-                <option value="10">November</option>
-                <option value="11">December</option>
-              </select>
-            </div>
-
-            <div class="col px-1">
-              <label class="visually-hidden" for="dob-year">Year</label>
-              <input
-                class="form-control"
-                type="number"
-                id="dob-year"
-                placeholder="Select your birth year"
-                value="2002"
-              />
-            </div>
-          </fieldset>
-        </section>
-
-        <section class="container mb-3">
-          <fieldset class="row">
-            <div class="px-1">
-              <legend>Age at the date of..</legend>
-            </div>
-
-            <div class="col px-1">
-              <label class="visually-hidden" for="age-at-day"> Day </label>
-              <select name="day" id="age-at-day" class="form-control"></select>
-            </div>
-
-            <div class="col px-1">
-              <label class="visually-hidden" for="age-at-month"> Month </label>
-              <select name="month" id="age-at-month" class="form-control">
-                <option value="0" selected>January</option>
-                <option value="1">February</option>
-                <option value="2">March</option>
-                <option value="3">April</option>
-                <option value="4">May</option>
-                <option value="5">June</option>
-                <option value="6">July</option>
-                <option value="7">August</option>
-                <option value="8">September</option>
-                <option value="9">October</option>
-                <option value="10">November</option>
-                <option value="11">December</option>
-              </select>
-            </div>
-
-            <div class="col px-1">
-              <label class="visually-hidden" for="age-at-year">Year</label>
-              <input
-                class="form-control"
-                type="number"
-                id="age-at-year"
-                placeholder="Select your birth year"
-                value="2002"
-              />
-            </div>
-          </fieldset>
-        </section>
-
-        <section class="container mb-3">
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary btn-lg">
-              Calculate Date of Birth
-            </button>
-          </div>
-        </section>
-      </form>
+          </section>
+        </form>
+      </section>
     </main>
 
     <footer>Copyright &copy; 2022</footer>

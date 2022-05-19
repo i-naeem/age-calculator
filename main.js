@@ -13,6 +13,7 @@ const ageAtDay = document.getElementById('age-at-day');
 
 const alertElement = document.getElementById('alert');
 const form = document.getElementById('dob-form');
+const ageAlert = document.getElementById('age-alert');
 
 // Set the initial value for days
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let previousSelectedAgeAtDay = ageAtDay.value;
 
-ageAtDay.onchange = (event) => {
+ageAtDay.onchange = () => {
   previousSelectedAgeAtDay = ageAtDay.value;
 };
 
@@ -60,11 +61,6 @@ ageAtMonth.onchange = () => {
   populateDaysSelectElement(ageAtDay, options, previousSelectedAgeAtDay);
 };
 
-// Toggle Alert
-const toggleAlert = () => {
-  alertElement.hidden = !alertElement.hidden;
-};
-
 form.onsubmit = (event) => {
   event.preventDefault();
   const from = new Date(
@@ -75,5 +71,13 @@ form.onsubmit = (event) => {
 
   const to = new Date(ageAtYear.value, ageAtMonth.value, ageAtDay.value);
 
-  const dob = getDateOfBirth(from, to);
+  if (from > to) {
+    alertElement.hidden = false;
+  } else {
+    alertElement.hidden = true;
+    const dob = getDateOfBirth(from, to);
+
+    ageAlert.innerHTML = `<h1>${dob.dob}</h1>`;
+    ageAlert.hidden = false;
+  }
 };
