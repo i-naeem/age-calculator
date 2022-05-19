@@ -6,6 +6,13 @@ const dateOfBirthYear = document.getElementById('dob-year');
 const dateOfBirthMonth = document.getElementById('dob-month');
 const dateOfBirthDay = document.getElementById('dob-day');
 
+const ageAtYear = document.getElementById('age-at-year');
+const ageAtMonth = document.getElementById('age-at-month');
+const ageAtDay = document.getElementById('age-at-day');
+
+const alertElement = document.getElementById('alert');
+const form = document.getElementById('dob-form');
+
 // Set the initial value for days
 document.addEventListener('DOMContentLoaded', () => {
   const options = getDaysOptions(dateOfBirthYear.value, dateOfBirthMonth.value);
@@ -29,9 +36,6 @@ dateOfBirthMonth.onchange = () => {
 };
 
 // Age at Section
-const ageAtYear = document.getElementById('age-at-year');
-const ageAtMonth = document.getElementById('age-at-month');
-const ageAtDay = document.getElementById('age-at-day');
 
 // Set the initial value for days
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,4 +57,14 @@ ageAtYear.onchange = () => {
 ageAtMonth.onchange = () => {
   const options = getDaysOptions(ageAtYear.value, ageAtMonth.value);
   populateDaysSelectElement(ageAtDay, options, previousSelectedAgeAtDay);
+};
+
+// Toggle Alert
+const toggleAlert = () => {
+  alertElement.hidden = !alertElement.hidden;
+};
+
+form.onsubmit = (event) => {
+  event.preventDefault();
+  toggleAlert();
 };
