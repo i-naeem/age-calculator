@@ -40,10 +40,13 @@ dateOfBirthMonth.onchange = () => {
 
 // Age at Section
 
+ageAtMonth.value = new Date().getMonth();
+ageAtYear.value = new Date().getFullYear();
+
 // Set the initial value for days
 document.addEventListener('DOMContentLoaded', () => {
   const options = getDaysOptions(ageAtYear.value, ageAtMonth.value);
-  populateDaysSelectElement(ageAtDay, options, '1');
+  populateDaysSelectElement(ageAtDay, options, new Date().getDate().toString());
 });
 
 let previousSelectedAgeAtDay = ageAtDay.value;
