@@ -20,6 +20,16 @@ const ageTable = document.getElementById('age-table');
 document.addEventListener('DOMContentLoaded', () => {
   const options = getDaysOptions(dateOfBirthYear.value, dateOfBirthMonth.value);
   populateDaysSelectElement(dateOfBirthDay, options, '1');
+
+  // Load LocalStorage
+  dateOfBirthDay.value = localStorage.getItem('dobDay') || 8;
+  dateOfBirthMonth.value = localStorage.getItem('dobMonth') || 8;
+  dateOfBirthYear.value = localStorage.getItem('dobYear') || 2002;
+
+  let today = new Date();
+  ageAtDay.value = localStorage.getItem('ageAtDay') || today.getDate();
+  ageAtMonth.value = localStorage.getItem('ageAtMonth') || today.getMonth();
+  ageAtYear.value = localStorage.getItem('ageAtYear') || today.getFullYear();
 });
 
 let previousSelectedDay = dateOfBirthDay.value;
@@ -110,14 +120,3 @@ form.onsubmit = (event) => {
     ageTable.hidden = false;
   }
 };
-
-// Load LocalStorage
-
-dateOfBirthDay.value = localStorage.getItem('dobDay') || 8;
-dateOfBirthMonth.value = localStorage.getItem('dobMonth') || 8;
-dateOfBirthYear.value = localStorage.getItem('dobYear') || 2002;
-
-let today = new Date();
-ageAtDay.value = localStorage.getItem('ageAtDay') || today.getDate();
-ageAtMonth.value = localStorage.getItem('ageAtMonth') || today.getMonth();
-ageAtYear.value = localStorage.getItem('ageAtYear') || today.getFullYear();
