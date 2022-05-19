@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+
     <title>
       Age Calculator - Find your age in days, months, years and more.
     </title>
@@ -17,18 +17,20 @@
 
     <main>
       <form>
-        <section>
-          <fieldset class="form-fieldset">
-            <legend>Date of Birth</legend>
-
-            <div class="form-control">
-              <label for="dob-day"> Day </label>
-              <select name="day" id="dob-day"></select>
+        <section class="container-lg">
+          <fieldset class="row">
+            <div class="px-1">
+              <legend>Date of Birth</legend>
             </div>
 
-            <div class="form-control">
-              <label for="dob-month"> Month </label>
-              <select name="month" id="dob-month">
+            <div class="col px-1">
+              <label class="visually-hidden" for="dob-day"> Day </label>
+              <select name="day" id="dob-day" class="form-control"></select>
+            </div>
+
+            <div class="col px-1">
+              <label class="visually-hidden" for="dob-month"> Month </label>
+              <select name="month" id="dob-month" class="form-control">
                 <option value="0" selected>January</option>
                 <option value="1">February</option>
                 <option value="2">March</option>
@@ -44,12 +46,19 @@
               </select>
             </div>
 
-            <div class="form-control">
-              <label for="dob-year">Year</label>
-              <input type="number" id="dob-year" value="2002" />
+            <div class="col px-1">
+              <label class="visually-hidden" for="dob-year">Year</label>
+              <input
+                class="form-control"
+                type="number"
+                id="dob-year"
+                placeholder="Select your birth year"
+                value="2002"
+              />
             </div>
           </fieldset>
         </section>
+
         <section></section>
       </form>
     </main>

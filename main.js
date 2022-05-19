@@ -1,6 +1,4 @@
-import 'normalize.css';
-import './style.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import getDaysOptions from './utils/getDaysOptions';
 import populateDaysSelectElement from './utils/populateDaysSelectedElement';
 
