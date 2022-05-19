@@ -21,6 +21,6 @@ git commit -m ':rocket: deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.cpm:i-naeem/age-calculator.git main:gh-pages
+git push -f git@github.com:i-naeem/age-calculator.git main:gh-pages
 
 cd -
