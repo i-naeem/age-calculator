@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Age calculator is an online tool with which you can find out your age using your date of birth and the current date. The tool helps to find out the difference in time between two dates. The result is displayed in years, months, weeks, and days. The results are also not affected by the time zone of a person since the tool just tells you the difference in time. The age calculator is based on the common age system, therefore it can be used by everyone."
+    />
 
     <title>
       Age Calculator - Find your age in days, months, years and more.
@@ -22,7 +26,7 @@
       </header>
     </div>
 
-    <main>
+    <main class="container mb-3">
       <section class="container mb-3">
         <div
           class="alert alert-success"
@@ -137,9 +141,104 @@
           </section>
         </form>
       </section>
+
+      <section class="container mb-3" id="age-table" hidden>
+        <h1>Your date of birth in</h1>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th>years</th>
+              <td id="years"></td>
+            </tr>
+            <tr>
+              <th>months</th>
+              <td id="months"></td>
+            </tr>
+
+            <tr>
+              <th>weeks</th>
+              <td id="weeks"></td>
+            </tr>
+
+            <tr>
+              <th>days</th>
+              <td id="days"></td>
+            </tr>
+
+            <tr>
+              <th>hours</th>
+              <td id="hours"></td>
+            </tr>
+
+            <tr>
+              <th>minutes</th>
+              <td id="minutes"></td>
+            </tr>
+
+            <tr>
+              <th>seconds</th>
+              <td id="seconds"></td>
+            </tr>
+
+            <tr>
+              <th>milliseconds</th>
+              <td id="milliseconds"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <hr />
+      <section class="container mb-3">
+        <p>
+          Age calculator is an online tool with which you can find out your age
+          using your date of birth and the current date. The tool helps to find
+          out the difference in time between two dates. The result is displayed
+          in years, months, weeks, and days. The results are also not affected
+          by the time zone of a person since the tool just tells you the
+          difference in time. The age calculator is based on the common age
+          system, therefore it can be used by everyone.
+        </p>
+
+        <p>
+          The age of a person can be counted differently in different cultures.
+          This calculator is based on the most common age system. In this
+          system, age grows at the birthday. For example, the age of a person
+          that has lived for 3 years and 11 months is 3 and the age will turn to
+          4 at his/her next birthday one month later. Most western countries use
+          this age system.
+        </p>
+
+        <p>
+          In some cultures, age is expressed by counting years with or without
+          including the current year. For example, one person who is twenty
+          years old is the same as one person who is in the twenty-first year of
+          his/her life. In one of the traditional Chinese age systems, people
+          are born at age 1 and the age grows up at the Traditional Chinese New
+          Year instead of birthday. For example, if one baby was born just one
+          day before the Traditional Chinese New Year, 2 days later, the baby
+          will be at age 2 even though he/she is only 2 days old.
+        </p>
+        <p>
+          In some situations, the months and days result of this age calculator
+          may be confusing, especially when the starting date is the end of a
+          month. For example, we all count Feb. 20 to March 20 to be one month.
+          However, there are two ways to calculate the age from Feb. 28, 2015 to
+          Mar. 31, 2015. If thinking Feb. 28 to Mar. 28 as one month, then the
+          result is one month and 3 days. If thinking both Feb. 28 and Mar. 31
+          as the end of the month, then the result is one month. Both
+          calculation results are reasonable. Similar situations exist for dates
+          like Apr. 30 to May 31, May 30 to June 30, etc. The confusion comes
+          from the uneven number of days in different months. In our
+          calculation, we used the former method.
+        </p>
+      </section>
     </main>
 
-    <footer>Copyright &copy; 2022</footer>
+    <hr />
+    <footer class="d-grid" style="place-items: center">
+      <p>© Copyright 2022. MulitCalculator. All rights reserved.</p>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

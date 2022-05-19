@@ -14,14 +14,14 @@ const getDateOfBirth = (from, to) => {
     end: to,
   });
 
-  let milliseconds = differenceInMilliseconds(from, to);
-  let seconds = differenceInSeconds(from, to);
-  let minutes = differenceInMinutes(from, to);
-  let hours = differenceInHours(from, to);
-  let days = differenceInDays(from, to);
-  let weeks = differenceInWeeks(from, to);
-  let months = differenceInMonths(from, to);
-  let years = differenceInYears(from, to);
+  let milliseconds = differenceInMilliseconds(to, from);
+  let seconds = differenceInSeconds(to, from);
+  let minutes = differenceInMinutes(to, from);
+  let hours = differenceInHours(to, from);
+  let days = differenceInDays(to, from);
+  let weeks = differenceInWeeks(to, from);
+  let months = differenceInMonths(to, from);
+  let years = differenceInYears(to, from);
 
   let dob = `You are age is `;
   dob += diff.years.toString();

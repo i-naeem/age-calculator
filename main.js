@@ -14,6 +14,7 @@ const ageAtDay = document.getElementById('age-at-day');
 const alertElement = document.getElementById('alert');
 const form = document.getElementById('dob-form');
 const ageAlert = document.getElementById('age-alert');
+const ageTable = document.getElementById('age-table');
 
 // Set the initial value for days
 document.addEventListener('DOMContentLoaded', () => {
@@ -61,6 +62,15 @@ ageAtMonth.onchange = () => {
   populateDaysSelectElement(ageAtDay, options, previousSelectedAgeAtDay);
 };
 
+const yearsOfDateOfBirth = document.getElementById('years');
+const monthsOfDateOfBirth = document.getElementById('months');
+const weeksOfDateOfBirth = document.getElementById('weeks');
+const daysOfDateOfBirth = document.getElementById('days');
+const hoursOfDateOfBirth = document.getElementById('hours');
+const minutesOfDateOfBirth = document.getElementById('minutes');
+const secondsOfDateOfBirth = document.getElementById('seconds');
+const millisecondsOfDateOfBirth = document.getElementById('milliseconds');
+
 form.onsubmit = (event) => {
   event.preventDefault();
   const from = new Date(
@@ -73,11 +83,23 @@ form.onsubmit = (event) => {
 
   if (from > to) {
     alertElement.hidden = false;
+    ageAlert.hidden = true;
+    ageTable.hidden = true;
   } else {
     alertElement.hidden = true;
     const dob = getDateOfBirth(from, to);
 
     ageAlert.innerHTML = `<h1>${dob.dob}</h1>`;
+
+    yearsOfDateOfBirth.textContent = dob.years;
+    monthsOfDateOfBirth.textContent = dob.months;
+    weeksOfDateOfBirth.textContent = dob.weeks;
+    daysOfDateOfBirth.textContent = dob.days;
+    hoursOfDateOfBirth.textContent = dob.hours;
+    minutesOfDateOfBirth.textContent = dob.minutes;
+    secondsOfDateOfBirth.textContent = dob.seconds;
+    millisecondsOfDateOfBirth.textContent = dob.milliseconds;
     ageAlert.hidden = false;
+    ageTable.hidden = false;
   }
 };
