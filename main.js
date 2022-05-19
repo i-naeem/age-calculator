@@ -27,3 +27,30 @@ dateOfBirthMonth.onchange = () => {
   const options = getDaysOptions(dateOfBirthYear.value, dateOfBirthMonth.value);
   populateDaysSelectElement(dateOfBirthDay, options, previousSelectedDay);
 };
+
+// Age at Section
+const ageAtYear = document.getElementById('age-at-year');
+const ageAtMonth = document.getElementById('age-at-month');
+const ageAtDay = document.getElementById('age-at-day');
+
+// Set the initial value for days
+document.addEventListener('DOMContentLoaded', () => {
+  const options = getDaysOptions(ageAtYear.value, ageAtMonth.value);
+  populateDaysSelectElement(ageAtDay, options, '1');
+});
+
+let previousSelectedAgeAtDay = ageAtDay.value;
+
+ageAtDay.onchange = (event) => {
+  previousSelectedAgeAtDay = ageAtDay.value;
+};
+
+ageAtYear.onchange = () => {
+  const options = getDaysOptions(ageAtYear.value, ageAtMonth.value);
+  populateDaysSelectElement(ageAtDay, options, previousSelectedAgeAtDay);
+};
+
+ageAtMonth.onchange = () => {
+  const options = getDaysOptions(ageAtYear.value, ageAtMonth.value);
+  populateDaysSelectElement(ageAtDay, options, previousSelectedAgeAtDay);
+};

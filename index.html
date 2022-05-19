@@ -17,7 +17,7 @@
 
     <main>
       <form>
-        <section class="container-lg">
+        <section class="container-lg mb-3">
           <fieldset class="row">
             <div class="px-1">
               <legend>Date of Birth</legend>
@@ -59,9 +59,50 @@
           </fieldset>
         </section>
 
-        <section></section>
+        <section class="container-lg mb-3">
+          <fieldset class="row">
+            <div class="px-1">
+              <legend>Age at the date of..</legend>
+            </div>
+
+            <div class="col px-1">
+              <label class="visually-hidden" for="age-at-day"> Day </label>
+              <select name="day" id="age-at-day" class="form-control"></select>
+            </div>
+
+            <div class="col px-1">
+              <label class="visually-hidden" for="age-at-month"> Month </label>
+              <select name="month" id="age-at-month" class="form-control">
+                <option value="0" selected>January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+              </select>
+            </div>
+
+            <div class="col px-1">
+              <label class="visually-hidden" for="age-at-year">Year</label>
+              <input
+                class="form-control"
+                type="number"
+                id="age-at-year"
+                placeholder="Select your birth year"
+                value="2002"
+              />
+            </div>
+          </fieldset>
+        </section>
       </form>
     </main>
+
     <footer>Copyright &copy; 2022</footer>
     <script type="module" src="/main.js"></script>
   </body>
